@@ -1,0 +1,14 @@
+{
+  "name": "dropshipping-workers",
+  "version": "1.0.0",
+  "description": "Workers for bulk operations",
+  "main": "import-csv.js",
+  "scripts": {
+    "import": "node import-csv.js"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.4.1",
+    "pg": "^8.11.3"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "dropshipping-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Complete dropshipping platform monorepo",
+  "workspaces": [
+    "apps/*",
+    "services/*"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:store && npm run install:admin && npm run install:api && npm run install:workers",
+    "install:store": "cd apps/store-frontend && npm install",
+    "install:admin": "cd apps/admin-panel && npm install",
+    "install:api": "cd services/api && npm install",
+    "install:workers": "cd services/workers && npm install",
+    "dev:store": "cd apps/store-frontend && npm run dev",
+    "dev:admin": "cd apps/admin-panel && npm run dev",
+    "dev:api": "cd services/api && npm run start:dev",
+    "build:all": "npm run build:api && npm run build:store && npm run build:admin",
+    "build:api": "cd services/api && npm run build",
+    "build:store": "cd apps/store-frontend && npm run build",
+    "build:admin": "cd apps/admin-panel && npm run build",
+    "seed": "cd services/api && npm run seed",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "dropshipping",
+    "ecommerce",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "MIT"
+}
